@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+      $(function() {
+        alert("hi");
+      });
+    </script>
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>을 업로드해주세요^^</p>
+
+    ----------------------------------------
+
+    <form action="/send" method="post" enctype="multipart/form-data">
+      <input type="checkbox" name="option" value="1">1. 공유왕
+      <input type="checkbox" name="option" value="2">2. 미안할 짓을 아예 하지말어~
+      <input type="checkbox" name="option" value="3">3. 결정장애
+      <p><input type="file" name="file">
+      <p><button type="submit" id="file_upload">Submit</button>
+    </form>
+  </body>
+</html>
