@@ -138,4 +138,58 @@ $(document).ready(function(){
   });
   //end card6
 
+  //card7
+  $(".rank7").click(function(){
+    $('#card_7_check').toggle();
+    $('#card_7_des').fadeToggle( "600", "linear" );
+    $.count_display('card_7_check');
+  });
+  $(".rank7").mouseover(function(){
+    if($("#card_7_back").css("display")=="none"){
+      $("#card_7_back").css('display','block');
+    };
+  });
+  $(".rank7").mouseout(function(){
+    if($("#card_7_check").css("display")=="none"){
+      $("#card_7_back").css('display','none');
+    };
+  });
+  //end card7
+
+  //card8
+  $(".rank8").click(function(){
+    $('#card_8_check').toggle();
+    $('#card_8_des').fadeToggle( "600", "linear" );
+    $.count_display('card_8_check');
+  });
+  $(".rank8").mouseover(function(){
+    if($("#card_8_back").css("display")=="none"){
+      $("#card_8_back").css('display','block');
+    };
+  });
+  $(".rank8").mouseout(function(){
+    if($("#card_8_check").css("display")=="none"){
+      $("#card_8_back").css('display','none');
+    };
+  });
+  //end card8
+
+  //card9
+  $(".rank9").click(function(){
+    $('#card_9_check').toggle();
+    $('#card_9_des').fadeToggle( "600", "linear" );
+    $.count_display('card_9_check');
+  });
+  $(".rank9").mouseover(function(){
+    if($("#card_9_back").css("display")=="none"){
+      $("#card_9_back").css('display','block');
+    };
+  });
+  $(".rank9").mouseout(function(){
+    if($("#card_9_check").css("display")=="none"){
+      $("#card_9_back").css('display','none');
+    };
+  });
+  //end card6
+
 });

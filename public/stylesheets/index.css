@@ -161,7 +161,7 @@ body{
      /**********************************/
      /******* second card (rank2) *******/
      /**********************************/
-     div[class="rank2"], div[class="rank=5"], div[class="rank=8"] {
+     div[class="rank2"], div[class="rank5"], div[class="rank8"] {
          margin-right:1.5%;
          width:30%;
          height:45%;

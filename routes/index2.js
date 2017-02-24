@@ -20,6 +20,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/help', function(req, res, next) {
+  res.render('help_guide', {title: 'Express'});
+});
+
 router.get('/send', function(req, res, next) {
   res.render('send', { title: '카카오톡 파일'});
 });
@@ -572,6 +576,18 @@ router.post('/send', upload.single('file'), function(req, res, next) {
     }
   ], function (err, result) {
 
+    var name_list = {
+      'pig' : '아가리어터',
+      'fuck' : '욕쟁이',
+      'photo' : '포토그래퍼',
+      'sorry' : 'ㅈㅅ장인',
+      'chat_start' : '맥스타터',
+      'chat_end' : '맥커터',
+      'disorder' : '결정장애',
+      'share' : '공유킹',
+      'late' : '상습지각자 색출'
+    };
+
     var final_array = [];
     var split_data = result.split("^^^^^");
 
@@ -579,11 +595,12 @@ router.post('/send', upload.single('file'), function(req, res, next) {
       var simple_data = split_data[i];
       var sample = simple_data.split(",");
       var power_array = [];
-      for (var k = 0; k < sample.length; k = k + 2) {
-        power_array.push(sample[k] + ',' + sample[k+1]);
+      for (var k = 0; k < sample.length; k++) {
+        power_array.push(sample[k]);
       }
       final_array.push({
         type: checkedOptions[i],
+        name: name_list[checkedOptions[i]],
         data: power_array
       })
     }
