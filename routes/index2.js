@@ -442,6 +442,14 @@ function FindSharingKing(jsonData, cb){
   cb(rank)
 }
 
+// 9. 지각왕
+function FindSharingKing(jsonData, cb){
+  console.log('지각왕');
+  var words = ['늦'];
+  var rank = FindUserWithWords(jsonData, words);
+  cb(rank)
+}
+
 router.post('/send', upload.single('file'), function(req, res, next) {
 
   var filePath = './' + req.file.path;
@@ -542,6 +550,18 @@ router.post('/send', upload.single('file'), function(req, res, next) {
       if (checkedOptions.indexOf('share') != -1) {
         ConvertFileToJson(filePath, FindSharingKing, function(rank) {
           console.log("공유왕");
+          console.log(rank);
+          // array.push(rank);
+          callback(null, arg1 + '^^^^^' + rank);
+        });
+      } else {
+        callback(null, arg1);
+      }
+    },
+    function(arg1, callback) {
+      if (checkedOptions.indexOf('late') != -1) {
+        ConvertFileToJson(filePath, FindLateKing, function(rank) {
+          console.log("지각왕");
           console.log(rank);
           // array.push(rank);
           callback(null, arg1 + '^^^^^' + rank);
