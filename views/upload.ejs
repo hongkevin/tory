@@ -36,24 +36,21 @@
       	function $id(id) {
       		return document.getElementById(id);
       	}
-      
-      
+
       	// output information
       	function Output(msg) {
       		var m = $id("messages");
               m.innerHTML = '';
       		m.innerHTML = msg + m.innerHTML;
       	}
-      
-      
+
       	// file drag hover
       	function FileDragHover(e) {
       		e.stopPropagation();
       		e.preventDefault();
       		e.target.className = (e.type == "dragover" ? "hover" : "");
       	}
-      
-      
+
       	// file selection
       	function FileSelectHandler(e) {
       
@@ -83,10 +80,10 @@
               numberStep: percent_number_step
             },
             10000
+          $('#submitbutton').css('display','block');
           );
       }
-      
-      
+
       	// output file information
       	function ParseFile(file) {
       
@@ -98,8 +95,7 @@
       		// );
       
       	}
-      
-      
+
       	// initialize
       	function Init() {
       

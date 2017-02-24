@@ -24,6 +24,13 @@ router.get('/help', function(req, res, next) {
   res.render('help_guide', {title: 'Express'});
 });
 
+router.post('/help', function(req, res, next) {
+  var checkedOptions = req.body.option;
+  // var checkedLength = checkedOptions.length;
+
+  res.sender('help_guide', {options: checkedOptions});
+})
+
 router.get('/upload', function(req, res, next) {
   res.render('upload', {title: 'Express'});
 });
@@ -612,7 +619,9 @@ router.post('/send', upload.single('file'), function(req, res, next) {
     var final_result = {
       result : final_array
     };
-    res.json(final_result);
+    // res.render('help_guide', {title: 'Express'});
+
+    res.render('result', final_result);
   });
 
 /*

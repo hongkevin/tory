@@ -36,6 +36,14 @@ div[id="chartContainershadow"]{
          font-family:"맑은 고딕";
          font-size:1.2em;
        }
+       a[class="menutxt_select"]{
+         color:#8D4D96;
+         font-family:"맑은 고딕";
+         font-size:1.2em;
+         border-bottom: solid 4px #8D4D96;
+         padding-bottom:12px;
+         text-decoration:none !important
+       }
        a[class="menutxt"]:hover{
          color:#8D4D96;
          font-family:"맑은 고딕";
