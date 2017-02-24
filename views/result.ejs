@@ -8,13 +8,13 @@
       <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
       <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
       <!-- <script type="text/javascript" src="js/result_graph.js"></script> -->
-      <script type="text/javascript" src="js/canvasjs.min.js"></script>
+      <script type="text/javascript" src="javascripts/canvasjs.min.js"></script>
 
       <!-- stylesheets
       ============================================= -->
       <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
       <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="css/result.css" rel="stylesheet" type="text/css">
+      <link href="stylesheets/result.css" rel="stylesheet" type="text/css">
 
       <!-- Document title
       ============================================= -->
@@ -26,8 +26,8 @@
     ============================================= -->
     <header>
 
-      <div class="headertop" style="background-image:url('images/top_1.png');">
-        <img src="images\LOGO.png" class="center-block" style="padding-top:1%;width:6%;" id="logo">
+      <div class="headertop" style="background-image:url('/images/top_1.png');">
+        <img src="/images/LOGO.png" class="center-block" style="padding-top:1%;width:6%;" id="logo">
       </div>
       <div class="headerbar">
         <% for(var i=0; i<result.length; i++) {%>
@@ -42,9 +42,9 @@
            ============================================= -->
       <div class="content" id="content<%=select%>">
           <div class="title">
-            <img src="images\title_<%=result[select].type%>.png" id="titleimg">
+            <img src="/images/title_<%=result[select].type%>.png" id="titleimg">
             <br>
-            <img src="images\for_kakao.png" id="titlekakao">
+            <img src="/images/for_kakao.png" id="titlekakao">
             <br>
           </div> <!--end title class -->
 
@@ -54,21 +54,21 @@
                   <span id="share">공유하기</span>
               </div>
               <div class="titlebarclass" id="titlebar" style="background-image:url('images/top_1.png');">
-                  <a href="#"><img src="images\icn_kakao.png" id="icn_kakao"></a>
-                  <a href="#"><img src="images\icn_facebook.png" id="icn_facebook"></a>
+                  <a href="#"><img src="/images/icn_kakao.png" id="icn_kakao"></a>
+                  <a href="#"><img src="/images/icn_facebook.png" id="icn_facebook"></a>
               </div>
           </div>
           <% var medalAry = ['gold','silver','bronze'] %>
           <!-- TOP3
           ============================================= -->
           <div class="top3">
-            <img src="images\top3.png" id="top3img">
+            <img src="/images/top3.png" id="top3img">
             <div class="top3content">
               <% for(var rank=0; rank<medalAry.length; rank++) {%>
                  <% var medal = medalAry[rank] %>
                 <!--<%=medal[rank]%> medal-->
                 <div class="award">
-                    <img src="images\medal_<%=medal%>.png" id="medal_<%=medal%>">
+                    <img src="/images/medal_<%=medal%>.png" id="medal_<%=medal%>">
                     <p class="userandcount">
                         <span id="<%=medal%>user"><%=result[select].data[rank*2]%></span>
                         <span id="<%=medal%>count"><%=result[select].data[rank*2+1]%>회</span>
@@ -85,7 +85,7 @@
           <!-- graphs
           ============================================= -->
           <div class="graphs">
-            <img src="images\graphs.png" id="graphsimg">
+            <img src="/images/graphs.png" id="graphsimg">
 
             <!--pie graph-->
             <div id="chartContainer<%=select%>" style=" height: 50%;
@@ -110,7 +110,7 @@
           9. late-->
 
           <div class="total">
-              <img src="images\total.png" id="totalimg">
+              <img src="/images/total.png" id="totalimg">
               <div class="totalcontent">
 
                 <% if(result[select].type=='pig'){%>
