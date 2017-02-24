@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/help', function(req, res, next) {
-  res.render('help_guide', {title: 'Express'});
+  res.render('help', {title: 'Express'});
 });
 
 router.post('/help', function(req, res, next) {

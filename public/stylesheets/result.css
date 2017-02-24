@@ -121,7 +121,8 @@ div[id="chartContainershadow"]{
          padding-top:0.45%;
          position:absolute;
          left:70%;
-         width:2%;height:auto%;
+         width:2%;height:auto;
+         width:2%;height:auto;
        }
       #icn_kakao{
          padding-top:0.5%;

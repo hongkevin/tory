@@ -75,18 +75,7 @@
             </div>
           </header><!-- #end header -->
 
-<form action="/send" method="post">
-  <input type="checkbox" name="option" id="pid" value="pig" style="display:none">
-  <input type="checkbox" name="option" id="fuck" value="fuck" style="display:none">
-  <input type="checkbox" name="option" id="photo" value="photo" style="display:none">
-  <input type="checkbox" name="option" id="sorry" value="sorry" style="display:none">
-  <input type="checkbox" name="option" id="chat_end" value="chat_end" style="display:none">
-  <input type="checkbox" name="option" id="chat_start" value="chat_start" style="display:none">
-  <input type="checkbox" name="option" id="disorder" value="disorder" style="display:none">
-  <input type="checkbox" name="option" id="share" value="share" style="display:none">
-  <input type="checkbox" name="option" id="late" value="late" style="display:none">
-  <button type="submit" id="submit" style="display:none">Submit</button>
-</form>
+
 
           <!-- content
           ============================================= -->
@@ -189,7 +178,22 @@
               <div class="analyzerclass">
                   <img src="/images/btn_do_check_1.png" id="count_img">
                   <span id="count_txt"> 0 </span>
-                  <button type="button" class="btn" style="display: none;"><img src="/images/btn_do_over.png" id="analyze_img"></button>
+                  <button type="submit" id="submit" style="display:none">Submit</button>
+                  <form action="/send" method="post">
+                    <input type="checkbox" name="option" id="pid" value="pig" style="display:none">
+                    <input type="checkbox" name="option" id="fuck" value="fuck" style="display:none">
+                    <input type="checkbox" name="option" id="photo" value="photo" style="display:none">
+                    <input type="checkbox" name="option" id="sorry" value="sorry" style="display:none">
+                    <input type="checkbox" name="option" id="chat_end" value="chat_end" style="display:none">
+                    <input type="checkbox" name="option" id="chat_start" value="chat_start" style="display:none">
+                    <input type="checkbox" name="option" id="disorder" value="disorder" style="display:none">
+                    <input type="checkbox" name="option" id="share" value="share" style="display:none">
+                    <input type="checkbox" name="option" id="late" value="late" style="display:none">
+                    <!--<a href="#"><img src="/images/btn_do_over.png" id="analyze_img"></a>-->
+                    <button type="submit" id="submit" style="display:none">Submit</button>
+                  </form>
+
+                  <a href="/help"><img src="/images/btn_do_over.png" id="analyze_img"></a>
               </div>
             </div><!--end innner_content-->
 
@@ -219,7 +223,7 @@
                                 <button type="button" class="close" data-dismiss="modal">×</button>
                                 <h4 class="modal-title"> 맥커터 </h4>
                             </div>
-                              <div class="modal-body"> <img src="/images/modal.png" id="modal1_img"></div>
+                              <div class="modal-body"><img src="/images/modal.png" id="modal1_img"></div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
                             </div>
