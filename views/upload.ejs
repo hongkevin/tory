@@ -11,9 +11,10 @@
    <div id="overlay"></div>
     <img src="/images/top.png" alt="Smiley face" width='100%'>
 
-    <form id="upload" action="#" method="POST" enctype="multipart/form-data" class="text-center">
+    <form id="upload" action="/result" method="POST" enctype="multipart/form-data" class="text-center">
       <div class="container">
         <!-- <img src="img_upload.png" class="img_upload" width='310px'> -->
+        <input type=""
         <input type="file" id="fileselect" name="fileselect[]" style="display: none">
         <img id="filedrag" src="/images/img_upload.png" ></img>
       </div>
@@ -80,7 +81,6 @@
               numberStep: percent_number_step
             },
             10000
-          $('#submitbutton').css('display','block');
           );
       }
 

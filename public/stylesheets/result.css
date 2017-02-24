@@ -96,7 +96,9 @@ div[id="chartContainershadow"]{
          font-family:"맑은 고딕";
          color:white;
        }
-
+       .carousel .item img {
+           min-width: 0;
+       }
        /*****공유하기*****/
        div[class="shareandtitlebar"] {
          width: 100%;

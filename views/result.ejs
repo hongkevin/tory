@@ -1,170 +1,179 @@
 <html>
   <head>
 
-      <!-- javascript
-      ============================================= -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-      <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-      <!-- <script type="text/javascript" src="js/result_graph.js"></script> -->
-      <script type="text/javascript" src="javascripts/canvasjs.min.js"></script>
+    <!-- javascript
+         ============================================= -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="js/result_graph.js"></script> -->
+    <script type="text/javascript" src="javascripts/canvasjs.min.js"></script>
 
-      <!-- stylesheets
-      ============================================= -->
-      <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="stylesheets/result.css" rel="stylesheet" type="text/css">
+    <!-- stylesheets
+         ============================================= -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/result.css" rel="stylesheet" type="text/css">
 
-      <!-- Document title
-      ============================================= -->
-      <title>카카오톡 분석기 TORY</title>
+    <!-- Document title
+         ============================================= -->
+    <title>카카오톡 분석기 TORY</title>
   </head>
 
   <body>
     <!-- Header
-    ============================================= -->
+         ============================================= -->
     <header>
 
-      <div class="headertop" style="background-image:url('/images/top_1.png');">
+      <div class="headertop" style="background-image:url('images/top_1.png');">
         <img src="/images/LOGO.png" class="center-block" style="padding-top:1%;width:6%;" id="logo">
       </div>
       <div class="headerbar">
         <% for(var i=0; i<result.length; i++) {%>
            <span class="menu" id=<%=result[i].type%>>
-             <a href="javascript:void(0)" id="menu<%=i%>" class="menutxt"><%=result[i].name%></a>
+             <a href="javascript:void(0)" id="menu<%=i%>" data-target="#myCarousel" data-slide-to="<%=i%>" class="menutxt"><%=result[i].name%></a>
            </span>
-        <% } %>
+           <% } %>
       </div>
     </header><!--end header-->
-    <% for(var select=0; select<result.length; select++) {%>
-      <!-- Content
-           ============================================= -->
-      <div class="content" id="content<%=select%>">
-          <div class="title">
-            <img src="/images/title_<%=result[select].type%>.png" id="titleimg">
-            <br>
-            <img src="/images/for_kakao.png" id="titlekakao">
-            <br>
-          </div> <!--end title class -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner" role="listbox">
 
-          <!-- share and titlebar -->
-          <div class="shareandtitlebar">
-              <div class="shareclass">
-                  <span id="share">공유하기</span>
-              </div>
-              <div class="titlebarclass" id="titlebar" style="background-image:url('images/top_1.png');">
-                  <a href="#"><img src="/images/icn_kakao.png" id="icn_kakao"></a>
-                  <a href="#"><img src="/images/icn_facebook.png" id="icn_facebook"></a>
-              </div>
-          </div>
-          <% var medalAry = ['gold','silver','bronze'] %>
-          <!-- TOP3
-          ============================================= -->
-          <div class="top3">
-            <img src="/images/top3.png" id="top3img">
-            <div class="top3content">
-              <% for(var rank=0; rank<medalAry.length; rank++) {%>
-                 <% var medal = medalAry[rank] %>
-                <!--<%=medal[rank]%> medal-->
-                <div class="award">
-                    <img src="/images/medal_<%=medal%>.png" id="medal_<%=medal%>">
-                    <p class="userandcount">
-                        <span id="<%=medal%>user"><%=result[select].data[rank*2]%></span>
-                        <span id="<%=medal%>count"><%=result[select].data[rank*2+1]%>회</span>
-                    </p>
-                </div>
-              <% } %>
+        <% for(var select=0; select<result.length; select++) {%>
+           <!-- Content
+                ============================================= -->
+           <% if (select == 0){%>
+           <div class="item active">
+             <%} else {%>
+             <div class="item">
+               <%}%>
 
-            </div><!--end top3content-->
-          </div>
-          <!--end top3-->
+               <div class="content" id="content<%=select%>">
+                 <div class="title">
+                   <img src="/images/title_<%=result[select].type%>.png" id="titleimg">
+                   <br>
+                   <img src="/images/for_kakao.png" id="titlekakao">
+                   <br>
+                 </div> <!--end title class -->
 
+                 <!-- share and titlebar -->
+                 <div class="shareandtitlebar">
+                   <div class="shareclass">
+                     <span id="share">공유하기</span>
+                   </div>
+                   <div class="titlebarclass" id="titlebar" style="background-image:url('images/top_1.png');">
+                     <a href="#"><img src="/images/icn_kakao.png" id="icn_kakao"></a>
+                     <a href="#"><img src="/images/icn_facebook.png" id="icn_facebook"></a>
+                   </div>
+                 </div>
+                 <% var medalAry = ['gold','silver','bronze'] %>
+                 <!-- TOP3
+                      ============================================= -->
+                 <div class="top3">
+                   <img src="/images/top3.png" id="top3img">
+                   <div class="top3content">
+                     <% for(var rank=0; rank<medalAry.length; rank++) {%>
+                        <% var medal = medalAry[rank] %>
+                        <!--<%=medal[rank]%> medal-->
+                        <div class="award">
+                          <img src="/images/medal_<%=medal%>.png" id="medal_<%=medal%>">
+                          <p class="userandcount">
+                            <span id="<%=medal%>user"><%=result[select].data[rank*2]%></span>
+                            <span id="<%=medal%>count"><%=result[select].data[rank*2+1]%>회</span>
+                          </p>
+                        </div>
+                        <% } %>
 
-          <hr style="height:1px; width:670px; border:5px;background-color: #B7B7B7">
-          <!-- graphs
-          ============================================= -->
-          <div class="graphs">
-            <img src="/images/graphs.png" id="graphsimg">
-
-            <!--pie graph-->
-            <div id="chartContainer<%=select%>" style=" height: 50%;
-             width: 80%; margin:50px auto;"></div>
-            <!--<div id="chartContainershadow"></div>-->
-
-          </div>
-          <!--end grahs-->
+                   </div><!--end top3content-->
+                 </div>
+                 <!--end top3-->
 
 
-          <hr style="height:1px; width:670px; border:5px;background-color: #B7B7B7">
-          <!-- total
-          ============================================= 
-          1. pig
-          2. fuck
-          3. photo
-          4. sorry
-          5. chat_start
-          6. chat_end
-          7. disorder
-          8. share
-          9. late-->
+                 <hr style="height:1px; width:670px; border:5px;background-color: #B7B7B7">
+                 <!-- graphs
+                      ============================================= -->
+                 <div class="graphs">
+                   <img src="/images/graphs.png" id="graphsimg">
 
-          <div class="total">
-              <img src="/images/total.png" id="totalimg">
-              <div class="totalcontent">
+                   <!--pie graph-->
+                   <div id="chartContainer<%=select%>" style=" height: 50%;
+                                                              width: 80%; margin:50px auto;"></div>
+                   <!--<div id="chartContainershadow"></div>-->
 
-                <% if(result[select].type=='pig'){%>
-                <p>1등 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨, 2등 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span>  씨, 3등 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨. 맨날 말로만 살빼야지 다이어트 해야지, 내일부턴 빼야지 등등 해놓고 얼마 안가 나 미쳤나봐 난 쓰레기야 같은 말을 하기 일쑤였지? 운동도 중요하지만 우선 먹는걸 줄여. 그거 못하는거 의지박약이야. 살 뺄 생각이 없는거지. 진짜 살이 빼고 싶다면 독한 마음 먹고 음식 줄이고 당장 운동해. 내일부터는 없어. 근데, 내가 봤을땐 너희 셋 다 안돼. 그럼 수고. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+                 </div>
+                 <!--end grahs-->
 
-                <%} else if(result[select].type=='fuck'){%>
-                <p>누구는 욕할줄 몰라서 안하는줄 알아? <span id="firstking" class="changetxt"><%=result[select].data[0]%></span>, 말끝마다 ㅅ발시ㅂ 붙이면 쿨해보이고 멋져 보일거라 생각했다면 큰 오산이야. 사람 되게 없어보여... 2등, 3등한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 랑 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span>도 반성해. 나이가 몇인데 아직 입에 걸레를 물고 다녀? 알아 들었으면 욕 좀 그만 하고 꺼져 이 샛기들아. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있으니까 하던지 말던지 바밤바.</p>
 
-                  <%} else if(result[select].type=='photo'){%>
-                  <p>언제나 충만한 감성으로 사진을 찍고 톡방에 자랑하는 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 작가님. 아, 그게 아니라 짤부자일수도 있군요!! 뭐가 되었든 카톡방을 풍성하게 만들어 준다는 것엔 변함이 없겠네요. 그리고 2등과 3등을 한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 님과 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 님은 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 님과 함께  많은 사진과 짤들로 카톡방을 더더욱 풍성하게 만들어주길 바랄게요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+                 <hr style="height:1px; width:670px; border:5px;background-color: #B7B7B7">
+                 <!-- total
+                      ============================================= 
+                      1. pig
+                      2. fuck
+                      3. photo
+                      4. sorry
+                      5. chat_start
+                      6. chat_end
+                      7. disorder
+                      8. share
+                      9. late-->
 
-                  <%} else if(result[select].type=='sorry'){%>
-                  <p>그거 아세요? 죄송하다는 말을 자주 하는 사람은 신뢰하기 쉽지 않아요. 피치 못할 사정이나 실수들이 쌓이고 쌓이면 결국 그 사람의 이미지가 되어 버리니까요. 그런 의미에서 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨는 죄송할 일을 좀 줄이셔야 할 것 같네요. 계속 그러시면 단톡방 사람들이 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨를 더이상 신뢰하지 않을거에요. 애초에 실수나 잘못하지 않으면 사과할 일은 없겠죠? 2등과 3등을 한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨와 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨도 마찬가지에요. 다들 서로 얼굴 붉히는 일 없으면 좋겠어요.</p>
+                 <div class="total">
+                   <img src="/images/total.png" id="totalimg">
+                   <div class="totalcontent">
 
-                  <%} else if(result[select].type=='chat_start'){%>
-                  <p>맨날 친구도 없이 앉아서 카톡만 하는 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span>, 축하해요. 이 단톡방에서 제일 할일 없는 놈으로 뽑혔어요. 날씨 좋은 날 산책이라도 좀 하시던지, 맨날 방구석에 박혀서 휴대폰만 만지작 대는게 좋나요? <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨랑 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨도 마찬가지에요. 다들 심심하다고 단톡 사람들 괴롭히면 안돼요 알겠죠? 그럼 20000. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+                     <% if(result[select].type=='pig'){%>
+                     <p>1등 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨, 2등 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span>  씨, 3등 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨. 맨날 말로만 살빼야지 다이어트 해야지, 내일부턴 빼야지 등등 해놓고 얼마 안가 나 미쳤나봐 난 쓰레기야 같은 말을 하기 일쑤였지? 운동도 중요하지만 우선 먹는걸 줄여. 그거 못하는거 의지박약이야. 살 뺄 생각이 없는거지. 진짜 살이 빼고 싶다면 독한 마음 먹고 음식 줄이고 당장 운동해. 내일부터는 없어. 근데, 내가 봤을땐 너희 셋 다 안돼. 그럼 수고. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
 
-                  <%} else if(result[select].type=='chat_end'){%>
-                  <p>단톡방 안에서 노잼을 담당한다고 볼 수 있는 맥커터들이 있죠. 그중 최고 노잼은 <span id="totalcount" class="changetxt"><%=result[select].data[0]%></span>. 단톡에서 필요한 정보만 쏙 빼먹으려 하거나 본인 취향의 개그를 강요하는건 아니겠죠? 이쯤이면 스스로 자각할 때도 되었는데... 결과를 보고 너무 충격 받지는 말아요. 언젠가 <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>씨의 말에 답을 해주는 천사가 나타날 수도 있으니까요. <span id="secondking" class="changetxt"><%=result[select].data[2]%></span>씨와 <span id="thirdking" class="changetxt"><%=result[select].data[4]%>씨도 무리한 드립은 삼가주세요. 언제 최고노잼에 등극할지 모르니까요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+                     <%} else if(result[select].type=='fuck'){%>
+                     <p>누구는 욕할줄 몰라서 안하는줄 알아? <span id="firstking" class="changetxt"><%=result[select].data[0]%></span>, 말끝마다 ㅅ발시ㅂ 붙이면 쿨해보이고 멋져 보일거라 생각했다면 큰 오산이야. 사람 되게 없어보여... 2등, 3등한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 랑 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span>도 반성해. 나이가 몇인데 아직 입에 걸레를 물고 다녀? 알아 들었으면 욕 좀 그만 하고 꺼져 이 샛기들아. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있으니까 하던지 말던지 바밤바.</p>
 
-                  <%} else if(result[select].type=='disorder'){%>
-                  <p>저기요, <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨. 이거 고를지 저거 고를지 하다가 허송세월 낭비 하지 말고, 또 그걸로 다른 톡방 사람들 힘들게 하지 마세요. 물론 다른 사람의 의견을 듣는건 좋지만 그것도 정도가 있는 법이에요. <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>번이씩이나 물어보면 듣는 사람 입장에서는 대충 아무거나 골라주게 된답니다. 2등을 한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨와 3등의 <span id="thirdking" class="changetxt"><%=result[select].data[4]%> 씨도 본인의 결정은 스스로 하는 습관을 들이도록 하세요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+                     <%} else if(result[select].type=='photo'){%>
+                     <p>언제나 충만한 감성으로 사진을 찍고 톡방에 자랑하는 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 작가님. 아, 그게 아니라 짤부자일수도 있군요!! 뭐가 되었든 카톡방을 풍성하게 만들어 준다는 것엔 변함이 없겠네요. 그리고 2등과 3등을 한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 님과 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 님은 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 님과 함께  많은 사진과 짤들로 카톡방을 더더욱 풍성하게 만들어주길 바랄게요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
 
-                  <%} else if(result[select].type=='share'){%>
-                  <p>공유킹은 각종 유용한 정보들을 모아서 혼자 독차지하지 않고 많은 사람들과 공유하는 사람입니다. 이 사람들의 특징은 성품이 바르고 외모가 수려하며, 대인관계가 원만하고 대체로 인기가 많은 편입니다. 이 결과를 보신 분들은 공유킹에 등극하신 <span id="totalcount" class="changetxt"><%=result[select].data[0]%></span> 님께 감사함을 표하고 조공을 바치세요. 2등, 3등을 하신 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 님과 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 님께도 감사함을 전해드리길 바랍니다. 세 분 아무쪼록 건강하시고 하시는 일마다 다 잘되시길 바라겠습니다. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
-                  <%} else if(result[select].type=='late'){%>
-                  <p>누구나 지각은 할 수 있습니다. 하지만
-                    <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>번은 좀 아니지 않나요,
-                    <span id="firstking" class="changetxt"><%=result[select].data[0]%></span>씨?
-                    <br>2등이라고 안심하지 마세요,
-                    <span id="secondking" class="changetxt"><%=result[select].data[2]%></span>씨도 잘한건 아니에요.
-                    <br>물론
-                    <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span>
-                    씨도요. 친구와의 약속, 학교 수업, 중요한 미팅같이 시간을 약속한다는 것은
-                    신뢰에 관한 문제입니다. 이제부터라도꼭 약속 시간을 지키려고 노력하는 모습을 보여주세요.
-                    다음 테스트에서는 이름이 오르지 않길 바랄게요. 결과물은 카카톡이나 페이스북으로
-                    공유하여 친구들과 재미있게 나눠봐요</p>
-                  <%}%>
-              </div>
-          </div><br><!--end total-->
-      </div><!-- end content-->
-      <% } %>
+                     <%} else if(result[select].type=='sorry'){%>
+                     <p>그거 아세요? 죄송하다는 말을 자주 하는 사람은 신뢰하기 쉽지 않아요. 피치 못할 사정이나 실수들이 쌓이고 쌓이면 결국 그 사람의 이미지가 되어 버리니까요. 그런 의미에서 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨는 죄송할 일을 좀 줄이셔야 할 것 같네요. 계속 그러시면 단톡방 사람들이 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨를 더이상 신뢰하지 않을거에요. 애초에 실수나 잘못하지 않으면 사과할 일은 없겠죠? 2등과 3등을 한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨와 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨도 마찬가지에요. 다들 서로 얼굴 붉히는 일 없으면 좋겠어요.</p>
+
+                     <%} else if(result[select].type=='chat_start'){%>
+                     <p>맨날 친구도 없이 앉아서 카톡만 하는 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span>, 축하해요. 이 단톡방에서 제일 할일 없는 놈으로 뽑혔어요. 날씨 좋은 날 산책이라도 좀 하시던지, 맨날 방구석에 박혀서 휴대폰만 만지작 대는게 좋나요? <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨랑 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨도 마찬가지에요. 다들 심심하다고 단톡 사람들 괴롭히면 안돼요 알겠죠? 그럼 20000. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+
+                     <%} else if(result[select].type=='chat_end'){%>
+                     <p>단톡방 안에서 노잼을 담당한다고 볼 수 있는 맥커터들이 있죠. 그중 최고 노잼은 <span id="totalcount" class="changetxt"><%=result[select].data[0]%></span>. 단톡에서 필요한 정보만 쏙 빼먹으려 하거나 본인 취향의 개그를 강요하는건 아니겠죠? 이쯤이면 스스로 자각할 때도 되었는데... 결과를 보고 너무 충격 받지는 말아요. 언젠가 <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>씨의 말에 답을 해주는 천사가 나타날 수도 있으니까요. <span id="secondking" class="changetxt"><%=result[select].data[2]%></span>씨와 <span id="thirdking" class="changetxt"><%=result[select].data[4]%>씨도 무리한 드립은 삼가주세요. 언제 최고노잼에 등극할지 모르니까요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+
+                     <%} else if(result[select].type=='disorder'){%>
+                     <p>저기요, <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨. 이거 고를지 저거 고를지 하다가 허송세월 낭비 하지 말고, 또 그걸로 다른 톡방 사람들 힘들게 하지 마세요. 물론 다른 사람의 의견을 듣는건 좋지만 그것도 정도가 있는 법이에요. <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>번이씩이나 물어보면 듣는 사람 입장에서는 대충 아무거나 골라주게 된답니다. 2등을 한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨와 3등의 <span id="thirdking" class="changetxt"><%=result[select].data[4]%> 씨도 본인의 결정은 스스로 하는 습관을 들이도록 하세요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+
+                     <%} else if(result[select].type=='share'){%>
+                     <p>공유킹은 각종 유용한 정보들을 모아서 혼자 독차지하지 않고 많은 사람들과 공유하는 사람입니다. 이 사람들의 특징은 성품이 바르고 외모가 수려하며, 대인관계가 원만하고 대체로 인기가 많은 편입니다. 이 결과를 보신 분들은 공유킹에 등극하신 <span id="totalcount" class="changetxt"><%=result[select].data[0]%></span> 님께 감사함을 표하고 조공을 바치세요. 2등, 3등을 하신 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 님과 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 님께도 감사함을 전해드리길 바랍니다. 세 분 아무쪼록 건강하시고 하시는 일마다 다 잘되시길 바라겠습니다. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+                     <%} else if(result[select].type=='late'){%>
+                     <p>누구나 지각은 할 수 있습니다. 하지만
+                       <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>번은 좀 아니지 않나요,
+                       <span id="firstking" class="changetxt"><%=result[select].data[0]%></span>씨?
+                       <br>2등이라고 안심하지 마세요,
+                       <span id="secondking" class="changetxt"><%=result[select].data[2]%></span>씨도 잘한건 아니에요.
+                       <br>물론
+                       <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span>
+                       씨도요. 친구와의 약속, 학교 수업, 중요한 미팅같이 시간을 약속한다는 것은
+                       신뢰에 관한 문제입니다. 이제부터라도꼭 약속 시간을 지키려고 노력하는 모습을 보여주세요.
+                       다음 테스트에서는 이름이 오르지 않길 바랄게요. 결과물은 카카톡이나 페이스북으로
+                       공유하여 친구들과 재미있게 나눠봐요</p>
+                     <%}%>
+                   </div>
+                 </div><br><!--end total-->
+               </div><!-- end content-->
+             </div>
+             <% } %>
+
+           </div>
+      </div>
       <script>
-        $("[id*=content]").hide();
-        $("#content0").show();
-        $("#menu0").attr("class","menutxt_select");
-        <% for(var i=0; i<result.length; i++) {%>
-           $("#menu<%=i%>").on("click", function(){
-             $("[id*=menu]").attr("class","menutxt");
-             $("#menu<%=i%>").attr("class","menutxt_select");
-             $("[id*=content]").hide();
-             $("#content<%=i%>").show();
-           });
-        <%}%>
+      $("#menu0").attr("class","menutxt_select");
+      <% for(var i=0; i<result.length; i++) {%>
+         $("#menu<%=i%>").on("click", function(){
+         $("[id*=menu]").attr("class","menutxt");
+         $("#menu<%=i%>").attr("class","menutxt_select");
+         });
+         <%}%>
       </script>
       <script>
         
@@ -214,14 +223,14 @@
            
            <% for(var i = 0; i < data.length / 2; i++) {%>
               {  y: <%=data[i*2+1]%>, label:"<%=data[i*2]%>", indexLabelFontColor:"#930AAC"},
-           <%}%>
-           ]
-           }]//data
-           });
-           chart<%=select%>.render();
-           
-           <%}%>
-           }
+              <%}%>
+              ]
+              }]//data
+              });
+              chart<%=select%>.render();
+              
+              <%}%>
+              }
       </script>
   </body>
 </html>

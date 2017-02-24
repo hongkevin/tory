@@ -9,6 +9,13 @@
         <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/javascripts/index.js"></script>
 
+        <script>
+          $(".rank1").click(function() {
+            $("input[name=link_url]").attr("disabled", true);
+          });
+
+        </script>
+
         <!-- stylesheets
         ============================================= -->
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -42,6 +49,19 @@
                 <img src="/images/btn_up.png" id="btn_up" class="headerbtn">
             </div>
           </header><!-- #end header -->
+
+<form action="/send" method="post">
+  <input type="checkbox" name="option" id="pid" value="pig" style="display:none">
+  <input type="checkbox" name="option" id="fuck" value="fuck" style="display:none">
+  <input type="checkbox" name="option" id="photo" value="photo" style="display:none">
+  <input type="checkbox" name="option" id="sorry" value="sorry" style="display:none">
+  <input type="checkbox" name="option" id="chat_end" value="chat_end" style="display:none">
+  <input type="checkbox" name="option" id="chat_start" value="chat_start" style="display:none">
+  <input type="checkbox" name="option" id="disorder" value="disorder" style="display:none">
+  <input type="checkbox" name="option" id="share" value="share" style="display:none">
+  <input type="checkbox" name="option" id="late" value="late" style="display:none">
+  <button type="submit" id="file_upload" style="display:none">Submit</button>
+</form>
 
           <!-- content
           ============================================= -->
