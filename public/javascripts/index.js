@@ -88,7 +88,7 @@ $(document).ready(function(){
     $(".rank4").click(function(){
       $('#card_4_check').toggle();
       $('#card_4_des').fadeToggle( "600", "linear" );
-      $.count_display('card_3_check');
+      $.count_display('card_4_check');
     });
     $(".rank4").mouseover(function(){
       if($("#card_4_back").css("display")=="none"){
@@ -106,7 +106,7 @@ $(document).ready(function(){
   $(".rank5").click(function(){
     $('#card_5_check').toggle();
     $('#card_5_des').fadeToggle( "600", "linear" );
-    $.count_display('card_3_check');
+    $.count_display('card_5_check');
   });
   $(".rank5").mouseover(function(){
     if($("#card_5_back").css("display")=="none"){
@@ -124,7 +124,7 @@ $(document).ready(function(){
   $(".rank6").click(function(){
     $('#card_6_check').toggle();
     $('#card_6_des').fadeToggle( "600", "linear" );
-    $.count_display('card_3_check');
+    $.count_display('card_6_check');
   });
   $(".rank6").mouseover(function(){
     if($("#card_6_back").css("display")=="none"){

@@ -99,7 +99,7 @@ body{
       /**********************************/
       /******* first card (rank1) *******/
       /**********************************/
-      div[class="rank1"] {
+      div[class="rank1"], div[class="rank4"], div[class="rank7"] {
         width:57%;
         height:40%;
         display:inline-block;
@@ -112,7 +112,7 @@ body{
       }
 
     /*img - 자세히*/
-       #card_1_detail{
+       #card_1_detail, #card_4_detail, #card_7_detail {
          position: absolute;
          top:86%;
          left:0%;;
@@ -121,7 +121,7 @@ body{
       }
 
       /*img - 체크아이콘*/
-       #card_1_check{
+       #card_1_check, #card_4_check, #card_7_check {
          display:none;
          position:absolute;
          top:35%;
@@ -129,7 +129,7 @@ body{
        }
 
       /*img - 순위*/
-      #card_1_label{
+      #card_1_label, #card_4_label, #card_7_label {
          position: absolute;
          top:-1.5%;
          left:-0.5%;;
@@ -138,11 +138,11 @@ body{
        }/*end img*/
 
      /*******shadow of the first card ******/
-     .rank1{
+     .rank1, .rank4, .rank7 {
        position:relative;
        box-shadow:0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
      }
-     .rank1:before, .rank1:after{
+     .rank1:before, .rank1:after, .rank4:before, .rank4:after, .rank7:before, .rank7:after {
          content:"";
          position:absolute;
          z-index:-1;
@@ -150,7 +150,7 @@ body{
          top:0; bottom:0; left:10px; right:10px;
          border-radius:100px / 10px;
      }
-     .rank1:after{
+     .rank1:after, .rank4:after, .rank7:after {
          right:10px;
          left:auto;
          transform:skew(8deg) rotate(3deg);
@@ -161,7 +161,7 @@ body{
      /**********************************/
      /******* second card (rank2) *******/
      /**********************************/
-     div[class="rank2"] {
+     div[class="rank2"], div[class="rank=5"], div[class="rank=8"] {
          margin-right:1.5%;
          width:30%;
          height:45%;
@@ -174,23 +174,23 @@ body{
          margin-bottom:2%;
          background-repeat:no-repeat;
      }
-     #card_2_detail{
+     #card_2_detail, #card_5_detail, #card_8_detail {
          position: absolute;
          top:94%;
          left:0%;;
          width:100%;
          height:auto;
       }
-     #card_1_check,#card_2_check,#card_3_check{
+     #card_1_check,#card_2_check,#card_3_check,#card_4_check,#card_5_check,#card_6_check,#card_7_check,#card_8_check,#card_9_check {
          z-index:3;
        display:none;
      }
-     #card_2_check{
+     #card_2_check, #card_5_check, #card_8_check {
        position:absolute;
        top:35%;
        left:43%;
      }
-    #card_2_label{
+    #card_2_label, #card_5_label, #card_8_label {
        position: absolute;
        z-index:4;
        top:-1%;
@@ -200,11 +200,11 @@ body{
      }/* end img */
 
      /*******shadow of the second card ******/
-     .rank2{
+     .rank2, .rank5, .rank8 {
        position:relative;
        box-shadow:0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
      }
-     .rank2:before, .rank2:after{
+     .rank2:before, .rank2:after, .rank5:before, .rank5:after, .rank8:before, .rank8:after {
          content:"";
          position:absolute;
          z-index:-1;
@@ -212,7 +212,7 @@ body{
          top:0; bottom:0; left:10px; right:10px;
          border-radius:100px / 10px;
      }
-     .rank2:after{
+     .rank2:after, .rank5:after, .rank8:after {
          right:10px;
          left:auto;
          transform:skew(8deg) rotate(3deg);
@@ -223,7 +223,7 @@ body{
    /**********************************/
    /******* third card (rank3) *******/
    /**********************************/
-     div[class="rank3"] {
+     div[class="rank3"], div[class="rank6"], div[class="rank9"] {
        width:25%;
        height:45%;
        display: inline-block;
@@ -235,19 +235,19 @@ body{
        margin-bottom:2%;
        background-repeat:no-repeat;
      }
-     #card_3_detail{
+     #card_3_detail, #card_6_detail, #card_9_detail {
        position: absolute;
        top:94.5%;
        left:0%;
        width:100%;
        height:auto;
      }
-     #card_3_check{
+     #card_3_check, #card_6_check, #card_9_check {
        position:absolute;
        top:35%;
        left:43%;
      }
-    #card_3_label{
+    #card_3_label, #card_6_label, #card_9_label {
        position: absolute;
        top:-1.5%;
        left:-1%;;
@@ -257,11 +257,11 @@ body{
      }/*end img */
 
      /*******shadow of the third card ******/
-     .rank3{
+     .rank3, .rank6, .rank9 {
        position:relative;
        box-shadow:0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
      }
-     .rank3:before, .rank3:after{
+     .rank3:before, .rank3:after, .rank6:before, .rank6:after, .rank9:before, .rank9:after {
          content:"";
          position:absolute;
          z-index:-1;
@@ -269,7 +269,7 @@ body{
          top:0; bottom:0; left:10px; right:10px;
          border-radius:100px / 10px;
      }
-     .rank3:after{
+     .rank3:after, .rank6:after, .rank9:after {
          right:10px;
          left:auto;
          transform:skew(8deg) rotate(3deg);
@@ -277,7 +277,7 @@ body{
    /******* end third card (rank3) *******/
 
     /*background(for img darkend. at mouseoverEvent)*/
-     #card_1_back,#card_2_back,#card_3_back{
+     #card_1_back,#card_2_back,#card_3_back,#card_4_back,#card_5_back,#card_6_back,#card_7_back,#card_8_back,#card_9_back {
        display:none;
        background-color:rgba(0,0,0,0.5);
        width:100%;
@@ -286,21 +286,21 @@ body{
      }
 
      /*title of each card(at mouseclickEvent)*/
-     #card_1_des,#card_2_des,#card_3_des{
+     #card_1_des,#card_2_des,#card_3_des,#card_4_des,#card_5_des,#card_6_des,#card_7_des,#card_8_des,#card_9_des{
        z-index:3;
        display:none;
        font-weight:500;
      }
-     #card_1_des{
+     #card_1_des,#card_4_des,#card_7_des{
         display:none;
         position: absolute;
         top:25%;left:45%;
      }
-     #card_2_des{
+     #card_2_des,#card_5_des,#card_8_des{
         position: absolute;
         top:25%;left:43%;
      }
-     #card_3_des{
+     #card_3_des,#card_6_des,#card_9_des{
         position: absolute;
         top:25%;left:43%;
      }
