@@ -24,6 +24,10 @@ router.get('/help', function(req, res, next) {
   res.render('help_guide', {title: 'Express'});
 });
 
+router.get('/upload', function(req, res, next) {
+  res.render('upload', {title: 'Express'});
+});
+
 router.get('/send', function(req, res, next) {
   res.render('send', { title: '카카오톡 파일'});
 });

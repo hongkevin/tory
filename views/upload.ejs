@@ -1,0 +1,141 @@
+<html><head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
+    <script src="/javascripts/jquery-animateNumber-0.0.14/jquery.animateNumber.min.js"></script>
+    <script src="/javascripts/jquery-animateNumber-0.0.14/jquery.color.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/upload.css">
+  </head><body>
+   <div id="overlay"></div>
+    <img src="../../../../Downloads/tory%202/top.png" alt="Smiley face" width='100%'>
+
+    <form id="upload" action="#" method="POST" enctype="multipart/form-data" class="text-center">
+      <div class="container">
+        <!-- <img src="img_upload.png" class="img_upload" width='310px'> -->
+        <input type="file" id="fileselect" name="fileselect[]" style="display: none">
+        <img id="filedrag" src="/images/img_upload.png" ></img>
+      </div>
+      <div id="submitbutton" style="display: none">
+        <button type="submit">다음</button>
+      </div>
+    </form>
+    <div class="message">
+      <p>내보내기 한 파일을 끌어다 놓으세요!</p>
+     <!--  <div id="messages">
+        <p>Status Messages</p>
+      </div> -->
+    </div>
+
+   <span class='test' id="target" style="font-size: 10px; color: #5d5d5d;">0%</span> 
+    <script>
+      (function() {
+      
+      	// getElementById
+      	function $id(id) {
+      		return document.getElementById(id);
+      	}
+      
+      
+      	// output information
+      	function Output(msg) {
+      		var m = $id("messages");
+              m.innerHTML = '';
+      		m.innerHTML = msg + m.innerHTML;
+      	}
+      
+      
+      	// file drag hover
+      	function FileDragHover(e) {
+      		e.stopPropagation();
+      		e.preventDefault();
+      		e.target.className = (e.type == "dragover" ? "hover" : "");
+      	}
+      
+      
+      	// file selection
+      	function FileSelectHandler(e) {
+      
+      		// cancel event and hover styling
+      		FileDragHover(e);
+      
+      		// fetch FileList object
+      		var files = e.target.files || e.dataTransfer.files;
+      
+      		// process all File objects
+      		for (var i = 0, f; f = files[i]; i++) {
+      			ParseFile(f);
+      		}
+            $('#filedrag').css({"border-color":"#53a7ea", "border-style":"solid"});
+            $('#overlay').css({ "position": "absolute","top": "0","left": "0","width": "100%", "height": "100%","z-index": "10","background-color": "rgba(0,0,0,0.7)"})
+            $('#target').show();
+
+
+          var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
+          $('#target').animateNumber(
+            {
+              number: 100,
+              color: '#FFFFFF',
+              'font-size': '30px',
+              easing: 'easeInQuad',
+
+              numberStep: percent_number_step
+            },
+            10000
+          );
+      }
+      
+      
+      	// output file information
+      	function ParseFile(file) {
+      
+      		// Output(
+      		// 	"<p>File information: <strong>" + file.name +
+      		// 	"</strong> type: <strong>" + file.type +
+      		// 	"</strong> size: <strong>" + file.size +
+      		// 	"</strong> bytes</p>"
+      		// );
+      
+      	}
+      
+      
+      	// initialize
+      	function Init() {
+      
+      		var fileselect = $id("fileselect"),
+      			filedrag = $id("filedrag"),
+      			submitbutton = $id("submitbutton");
+      
+      		// file select
+      		fileselect.addEventListener("change", FileSelectHandler, false);
+      
+      		// is XHR2 available?
+      		var xhr = new XMLHttpRequest();
+      		if (xhr.upload) {
+      
+      			// file drop
+      			filedrag.addEventListener("dragover", FileDragHover, false);
+      			filedrag.addEventListener("dragleave", FileDragHover, false);
+      			filedrag.addEventListener("drop", FileSelectHandler, false);
+      			filedrag.style.display = "block";
+      
+      			// remove submit button
+      			//submitbutton.style.display = "none";
+      		}
+      
+      	}
+      
+      	// call initialization file
+      	if (window.File && window.FileList && window.FileReader) {
+      		Init();
+      	}
+      
+      
+      })();
+
+        
+    </script>
+  
+
+</body></html>
