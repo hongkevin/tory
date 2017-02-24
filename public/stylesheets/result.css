@@ -179,17 +179,17 @@ div[id="chartContainershadow"]{
        #medal_gold,#medal_silver,#medal_bronze{
          position:absolute;
          left:35%;
-         height:8%;
+         height:3%;
          width:auto;
        }
        #medal_gold{
-         top:86.5%;
+         top:22.4%;
        }
        #medal_silver{
-         top:95%;
+         top:26%;
        }
        #medal_bronze{
-         top:104%;
+         top:29.5%;
        }
 
 

@@ -11,8 +11,33 @@
 
         <script>
           $(".rank1").click(function() {
-            $("input[name=link_url]").attr("disabled", true);
+            $('input[id="pig"]').attr("checked", true);
           });
+          $(".rank2").click(function() {
+            $('input[id="fuck"]').attr("checked", true);
+          });
+          $(".rank3").click(function() {
+            $('input[id="photo"]').attr("checked", true);
+          });
+          $(".rank4").click(function() {
+            $('input[id="sorry"]').attr("checked", true);
+          });
+          $(".rank5").click(function() {
+            $('input[id="chat_end"]').attr("checked", true);
+          });
+          $(".rank6").click(function() {
+            $('input[id="chat_start"]').attr("checked", true);
+          });
+          $(".rank7").click(function() {
+            $('input[id="disorder"]').attr("checked", true);
+          });
+          $(".rank8").click(function() {
+            $('input[id="share"]').attr("checked", true);
+          });
+          $(".rank9").click(function() {
+            $('input[id="late"]').attr("checked", true);
+          });
+
 
         </script>
 
@@ -60,7 +85,7 @@
   <input type="checkbox" name="option" id="disorder" value="disorder" style="display:none">
   <input type="checkbox" name="option" id="share" value="share" style="display:none">
   <input type="checkbox" name="option" id="late" value="late" style="display:none">
-  <button type="submit" id="file_upload" style="display:none">Submit</button>
+  <button type="submit" id="submit" style="display:none">Submit</button>
 </form>
 
           <!-- content
@@ -164,7 +189,7 @@
               <div class="analyzerclass">
                   <img src="/images/btn_do_check_1.png" id="count_img">
                   <span id="count_txt"> 0 </span>
-                  <a herf="# "><img src="/images/btn_do_over.png " id="analyze_img"></a>
+                  <button type="button" class="btn" style="display: none;"><img src="/images/btn_do_over.png" id="analyze_img"></button>
               </div>
             </div><!--end innner_content-->
 
