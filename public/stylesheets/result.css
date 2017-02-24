@@ -1,0 +1,216 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/*
+div[id="chartContainershadow"]{
+   height: 50%;
+   width: 80%;
+   background-color:transparent;
+   margin: 50px auto;
+}
+
+div[id="chartContainershadow"]{
+    position: relative;
+    top:-340px;left:160px;
+    height:35%;
+    width: 35%; z-index:13;
+    background-color:grey;
+    border-radius: 100%;
+    box-shadow:  0 0 100px #000000;
+}*/
+      /***** body ******/
+      body{
+         text-align:center;
+         background-color:#F6F6F6;
+        }
+
+
+      /***** header ******/
+       div[class="headertop"]{
+         background-repeat: no-repeat;
+         background-size:100% 100%;
+         width:100%;
+         background-color: inherit;
+       }
+
+       a[class="menutxt"]{
+         color:#5D5D5D;
+         font-family:"맑은 고딕";
+         font-size:1.2em;
+       }
+       a[class="menutxt"]:hover{
+         color:#8D4D96;
+         font-family:"맑은 고딕";
+         font-size:1.2em;
+         border-bottom: solid 4px #8D4D96;
+         padding-bottom:12px;
+         text-decoration:none !important
+       }
+
+       div[class="headerbar"]{
+         padding-top:15px;
+         background-color:white;
+         width:100%;
+         height:54px;
+         box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      }
+       span[class="menu"]{
+         display:inline-block;
+         margin-left:30px;
+         margin-right:30px;
+         font-family:"맑은 고딕";
+         font-weight: 600;
+       }
+
+       /******* content *******/
+       div[class="content"]{
+        width:50%;
+        background-color:white !important;
+        border-radius: 70px;
+        margin: 105px auto;
+        box-shadow:  0 0 10px #000000;
+       }
+
+       /****title of inside content****/
+       div[class="title"]{
+         padding-top:5%;
+         padding-bottom:5%;
+       }
+       #titleimg{
+         margin-top:30px;
+         margin-bottom:20px;
+         width:60%;
+         height:auto;
+       }
+       #titlekakao{
+         width:101px;
+       }
+       #share{
+         font-size:1.6em;
+         font-family:"맑은 고딕";
+         color:white;
+       }
+
+       /*****공유하기*****/
+       div[class="shareandtitlebar"] {
+         width: 100%;
+       }
+       div[class="shareclass"] {
+         background-color:#814B87;
+         width: 20%;
+         float: left;
+         height: 50px;
+         padding: 10px;
+       }
+       div[class="titlebarclass"] {
+         background-size: 100% 100%;
+         color: black;
+         width: 80%;
+         height: 50px;
+         float:left;
+       }
+       #icn_facebook{
+         padding-top:0.45%;
+         position:absolute;
+         left:70%;
+         width:2%;height:auto%;
+       }
+      #icn_kakao{
+         padding-top:0.5%;
+         position:absolute;
+         left:67%;
+         width:2%;height:auto;
+       }/***end 공유하기***/
+
+
+       /**********************************/
+       /************** TOP 3 *************/
+       /**********************************/
+       div[class="top3"]{
+         margin-top:120px;
+         margin-bottom:70px;
+       }
+       #top3img{
+         height:25px;
+         margin-bottom:35px;
+       }
+       div[class="top3content"]{
+          width:80%;
+          margin: 10px auto;
+          padding:20px;
+          background-color:#F6F6F6;
+          border-radius: 40px;
+       }
+       div[class="award"]{
+         font-family:"맑은 고딕";
+         font-size:20px;
+         width:75%;height:6%;
+         margin:23px auto;
+         background-color:white;
+         border-radius: 30px;
+         box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0) inset;
+       }
+       p[class="userandcount"]{
+         padding-top:10px;
+         height:6%;
+       }
+       /*****user_names txt*****/
+       #golduser,#silveruser,#bronzeuser{
+         padding-left:65px;
+       }
+
+       /*****user's counting txt*****/
+       #goldcount,#silvercount,#bronzecount{
+         color:#828282;
+         padding-right:25px;
+         float:right;
+       }
+
+
+       /*****medal img*****/
+       #medal_gold,#medal_silver,#medal_bronze{
+         position:absolute;
+         left:35%;
+         height:8%;
+         width:auto;
+       }
+       #medal_gold{
+         top:86.5%;
+       }
+       #medal_silver{
+         top:95%;
+       }
+       #medal_bronze{
+         top:104%;
+       }
+
+
+       /**********************************/
+       /************** Total *************/
+       /**********************************/
+       div[class="total"]{
+
+       }
+       div[class="totalcontent"]{
+         line-height:150%;
+         background-color: #F6F6F6;
+         color:#5D5D5D;
+         font-family:"맑은 고딕";
+         font-size:18px;
+         padding-top:40px;  padding-bottom:40px;
+         padding-left:53px;
+         padding-right:53px;
+         width:85%;
+         margin:50px auto;
+         border-radius: 30px;
+       }
+
+      #graphsimg,#totalimg {
+         height:25px;
+         margin-top:65px;
+       }
+       span[class="changetxt"]{
+       font-weight:600;
+       color:black;}
+
+       p{
+        text-align:left;
+      }

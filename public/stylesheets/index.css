@@ -1,0 +1,346 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+/***** body ******/
+body{
+   text-align:center;
+   background-color:#F6F6F6;
+  }
+ div[class="content"]{
+   background-color:#F6F6F6;
+ }
+
+
+/***** header (inside body tag)******/
+  header{
+     margin-bottom:5%;
+   }
+   div[class="headertop"]{
+     background-repeat: no-repeat;
+     background-size:100% 100%;
+     width:100%;
+   }
+   div[class="headermiddle"]{
+     display:none;
+     box-shadow:0px 0px 5px grey inset;
+     background-repeat: no-repeat;
+     background-size:100% 100%;
+     height:17%;
+     width:100%;
+   }
+    div[class="headerbottom"]{
+      background-repeat: no-repeat;
+      background-size:100% 100%;
+      margin-top:0px;
+      height:5%;
+      box-shadow: 0px 1px 5px 1px #ccc;
+   }
+
+   /*
+    comment at header
+   */
+     #comment{
+       padding:0.5%;pad
+       font-family:'Nanum Gothic', sans-serif;
+       font-size:2.3vmin;
+       color:white;
+       font-weight:500;
+     }
+     #comment_tory{
+       font-weight:bolder;
+     }
+     #comment_below{
+       font-weight:lighter;
+       font-size:1.5vmin;
+     }
+     #history{
+       word-spacing:-3px;
+     }
+
+     /*
+      button for headerComment sliding
+     */
+     img[class="headerbtn"]{
+         width:2.5%;
+         position:absolute;
+         left:48%;
+         margin:0.5%;
+       }
+       #btn_up{
+         display:none;
+       }
+/***** end header ******/
+
+      /*
+       title of each card (only appear when the card clicked)
+      */
+       p{
+        font-family:'Nanum Gothic', sans-serif;
+        font-size:3vmin;
+        color:white;
+        font-weight:500;
+        vertical-align:middle;
+      }
+
+      /*가나다순 | 인기순 */
+       div[class="align_method"]{
+         font-family:'Nanum Gothic', sans-serif;
+         font-size:2vmin;
+         margin-left:48%;
+         margin-bottom:0.5%;
+       }
+       a{
+         color:#5d5d5d;
+       }
+       #popular{
+        font-weight:bold;
+      }
+
+      /**********************************/
+      /******* first card (rank1) *******/
+      /**********************************/
+      div[class="rank1"] {
+        width:57%;
+        height:40%;
+        display:inline-block;
+        vertical-align: top;
+        position: relative;
+        background-size:100% 100%;
+        background-position:center;
+        margin-bottom:1%;
+        background-repeat:no-repeat;
+      }
+
+    /*img - 자세히*/
+       #card_1_detail{
+         position: absolute;
+         top:86%;
+         left:0%;;
+         width:100%;
+         height:auto;
+      }
+
+      /*img - 체크아이콘*/
+       #card_1_check{
+         display:none;
+         position:absolute;
+         top:35%;
+         left:48%;
+       }
+
+      /*img - 순위*/
+      #card_1_label{
+         position: absolute;
+         top:-1.5%;
+         left:-0.5%;;
+         width:10%;
+         height:auto;
+       }/*end img*/
+
+     /*******shadow of the first card ******/
+     .rank1{
+       position:relative;
+       box-shadow:0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     }
+     .rank1:before, .rank1:after{
+         content:"";
+         position:absolute;
+         z-index:-1;
+         box-shadow:0 0 5px rgba(0,0,0,0.8);
+         top:0; bottom:0; left:10px; right:10px;
+         border-radius:100px / 10px;
+     }
+     .rank1:after{
+         right:10px;
+         left:auto;
+         transform:skew(8deg) rotate(3deg);
+     }/*end shaodw*/
+     /******* end first card (rank1) *******/
+
+
+     /**********************************/
+     /******* second card (rank2) *******/
+     /**********************************/
+     div[class="rank2"] {
+         margin-right:1.5%;
+         width:30%;
+         height:45%;
+         display: inline-block;
+         vertical-align: top;
+         margin-top: 10px;
+         position: relative;
+         background-size:100% 100%;
+         background-position:center;
+         margin-bottom:2%;
+         background-repeat:no-repeat;
+     }
+     #card_2_detail{
+         position: absolute;
+         top:94%;
+         left:0%;;
+         width:100%;
+         height:auto;
+      }
+     #card_1_check,#card_2_check,#card_3_check{
+         z-index:3;
+       display:none;
+     }
+     #card_2_check{
+       position:absolute;
+       top:35%;
+       left:43%;
+     }
+    #card_2_label{
+       position: absolute;
+       z-index:4;
+       top:-1%;
+       left:-1%;;
+       width:18%;
+       height:auto;
+     }/* end img */
+
+     /*******shadow of the second card ******/
+     .rank2{
+       position:relative;
+       box-shadow:0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     }
+     .rank2:before, .rank2:after{
+         content:"";
+         position:absolute;
+         z-index:-1;
+         box-shadow:0 0 5px rgba(0,0,0,0.8);
+         top:0; bottom:0; left:10px; right:10px;
+         border-radius:100px / 10px;
+     }
+     .rank2:after{
+         right:10px;
+         left:auto;
+         transform:skew(8deg) rotate(3deg);
+     }/*end shaodw*/
+   /******* end second card (rank2) *******/
+
+
+   /**********************************/
+   /******* third card (rank3) *******/
+   /**********************************/
+     div[class="rank3"] {
+       width:25%;
+       height:45%;
+       display: inline-block;
+       vertical-align: top;
+       margin-top: 10px;
+       position: relative;
+       background-size:100% 100%;
+       background-position:center;
+       margin-bottom:2%;
+       background-repeat:no-repeat;
+     }
+     #card_3_detail{
+       position: absolute;
+       top:94.5%;
+       left:0%;
+       width:100%;
+       height:auto;
+     }
+     #card_3_check{
+       position:absolute;
+       top:35%;
+       left:43%;
+     }
+    #card_3_label{
+       position: absolute;
+       top:-1.5%;
+       left:-1%;;
+       width:20%;
+       height:auto;
+       z-index:5;
+     }/*end img */
+
+     /*******shadow of the third card ******/
+     .rank3{
+       position:relative;
+       box-shadow:0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     }
+     .rank3:before, .rank3:after{
+         content:"";
+         position:absolute;
+         z-index:-1;
+         box-shadow:0 0 5px rgba(0,0,0,0.8);
+         top:0; bottom:0; left:10px; right:10px;
+         border-radius:100px / 10px;
+     }
+     .rank3:after{
+         right:10px;
+         left:auto;
+         transform:skew(8deg) rotate(3deg);
+     }/*end shaodw*/
+   /******* end third card (rank3) *******/
+
+    /*background(for img darkend. at mouseoverEvent)*/
+     #card_1_back,#card_2_back,#card_3_back{
+       display:none;
+       background-color:rgba(0,0,0,0.5);
+       width:100%;
+       height:100%;
+       z-index:1;
+     }
+
+     /*title of each card(at mouseclickEvent)*/
+     #card_1_des,#card_2_des,#card_3_des{
+       z-index:3;
+       display:none;
+       font-weight:500;
+     }
+     #card_1_des{
+        display:none;
+        position: absolute;
+        top:25%;left:45%;
+     }
+     #card_2_des{
+        position: absolute;
+        top:25%;left:43%;
+     }
+     #card_3_des{
+        position: absolute;
+        top:25%;left:43%;
+     }
+
+    /*
+    modal popup
+    */
+    .modal {
+        text-align: center;
+        padding: 0!important;
+    }
+    .modal:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -4px;
+    }
+    .modal-dialog {
+      display: inline-block;
+      text-align: center;
+      vertical-align: 40%;
+    }/* #end modal*/
+    div[class="analyzerclass"]{
+      width:5%;
+      position: absolute;
+      top:35%;left:80%;
+      }
+
+    /**************count & analyze*******************/
+    #count_txt{ /* txt(display counting number)*/
+      color: white;
+      font-family: sans-serif;
+      font-size: 15px;
+      position: absolute;
+      top:1%;left:79%;
+    }
+    #count_img,#analyze_img{
+      width: 100%;
+    }
+    #analyze_img{
+      display: none;
+    }

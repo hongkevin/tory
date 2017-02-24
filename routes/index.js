@@ -1,6 +1,7 @@
 'use strict'
 var express = require('express');
 var router = express.Router();
+var waitUntil = require('wait-until');
 
 var multer = require('multer');
 var storage = multer.diskStorage({
@@ -476,36 +477,53 @@ router.post('/send', upload.single('file'), function(req, res, next) {
 
   var filePath = './' + req.file.path;
   var checkedOptions = req.body.option;
+  console.log(checkedOptions);
+  var checkedLength = checkedOptions.length;
+  console.log(checkedLength);
+  var counter = 0;
+  var array = [];
 
   if (checkedOptions.indexOf('pig') != -1) {
-    ConvertFileToJson(filePath, FindPiggyKing);
+    var a = ConvertFileToJson(filePath, FindPiggyKing)
+    array.push(a);
   }
   if (checkedOptions.indexOf('fuck') != -1) {
-    ConvertFileToJson(filePath, FindFuckKing);
+    array.push(ConvertFileToJson(filePath, FindFuckKing));
   }
   if (checkedOptions.indexOf('photo') != -1) {
-    ConvertFileToJson(filePath, FindPhotoKing);
+    array.push(ConvertFileToJson(filePath, FindPhotoKing));
   }
   if (checkedOptions.indexOf('sorry') != -1) {
-    ConvertFileToJson(filePath, FindSorryKing);
+    var a = ConvertFileToJson(filePath, FindSorryKing);
+    array.push(a);
   }
   if (checkedOptions.indexOf('chat_start') != -1) {
-    ConvertFileToJson(filePath, FindChatStarter);
+    array.push(ConvertFileToJson(filePath, FindChatStarter));
   }
   if (checkedOptions.indexOf('chat_end') != -1) {
-    ConvertFileToJson(filePath, FindChatEnder);
+    array.push(ConvertFileToJson(filePath, FindChatEnder));
   }
   if (checkedOptions.indexOf('disorder') != -1) {
-    ConvertFileToJson(filePath, FindMakingDisorderKing);
+    array.push(ConvertFileToJson(filePath, FindMakingDisorderKing));
   }
   if (checkedOptions.indexOf('share') != -1) {
-    ConvertFileToJson(filePath, FindSharingKing);
+    array.push(ConvertFileToJson(filePath, FindSharingKing));
   }
   if (checkedOptions.indexOf('late') != -1) {
-    ConvertFileToJson(filePath, FindSharingKing); // late 는 구현해야함
+    array.push(ConvertFileToJson(filePath, FindSharingKing));
   }
 
-  res.send('good job');
+  var a = function () {
+    console.log('1:'+checkedLength);
+    console.log('2:'+array.length);
+    if (checkedLength == array.length) {
+      console.log(array);
+      res.send(array);
+    }
+  };
+
+  setInterval(a, 1000);
+
 });
 
 module.exports = router;

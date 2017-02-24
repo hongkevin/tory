@@ -1,11 +1,148 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- javascript
+        ============================================= -->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/javascripts/index.js"></script>
+
+        <!-- stylesheets
+        ============================================= -->
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="/stylesheets/index.css" rel="stylesheet" type="text/css" />
+        <!-- Document Title
+        ============================================= -->
+        <title>카카오톡 분석기 TORY</title>
+
+    </head>
+      <body>
+        <!-- Header
+          ============================================= -->
+          <header>
+              <div class="headertop" style="background-image:url('../../../../Downloads/[NEW] index, help_guide, result페이지/images/top_1.png');">
+                  <img src="../public/images/LOGO.png" class="center-block" style="padding-top:1%;width:6%;" id="logo">
+              </div>
+
+              <div class="headermiddle" style="background-image:url('../../../../Downloads/[NEW] index, help_guide, result페이지/images/top_1.png');">
+              <p class="col-md-12 text-center" id="comment">카카오톡 심층 분석 서비스
+                  <br>
+                  <span id="history">HIS<span id="comment_tory">TORY</span></span><br><br>
+                  <span id="comment_below">분석해서 나온 흥미로운 결과들을 자유롭게 공유하세요!
+                    <br>등등 기타 멘트...</span>
+                  <br>
+              </p>
+            </div>
+
+            <div class="headerbottom" style="background-image:url('../../../../Downloads/[NEW] index, help_guide, result페이지/images/top_1.png');">
+                <img src="../public/images/btn_down.png" id="btn_down" class="headerbtn">
+                <img src="../public/images/btn_up.png" id="btn_up" class="headerbtn">
+            </div>
+          </header><!-- #end header -->
+
+          <!-- content
+          ============================================= -->
+          <div class="content">
+            <div class="innner_content">
+              <div class="align_method">
+                  <a herf="#"><span id="ganada"> 가나다순 </span></a>|
+                  <a herf="#"><span id="popular"> 인기순</span></a>
+            </div>
+
+              <!-- First card (rank1)
+              ============================================= -->
+              <div class="rank1" style="background-image:url('../../../../Downloads/[NEW] index, help_guide, result페이지/images/contents_late.png')">
+                  <div id="card_1_back"></div>
+                      <p id="card_1_des">상습지각자</p>
+                      <img src="../public/images/icn_check.png" id="card_1_check">
+                      <img src="../public/images/detail_1.png" id="card_1_detail" data-toggle="modal" data-target="#modal1">
+                      <img src="../public/images/label_1.png" id="card_1_label">
+                  </div>
+              <br>
+
+              <!-- second card (rank2)
+              ============================================= -->
+              <div class="rank2" style="background-image:url('../../../../Downloads/[NEW] index, help_guide, result페이지/images/contents_cutter.png')">
+                  <div id="card_2_back"></div>
+                    <p id="card_2_des">맥커터</p>
+                      <img src="../public/images/icn_check.png" id="card_2_check">
+                      <img src="../public/images/detail_1.png" id="card_2_detail" data-toggle="modal" data-target="#modal2">
+                      <img src="../public/images/label_2.png" id="card_2_label">
+              </div>
+
+              <!-- third card (rank3)
+              ============================================= -->
+              <div class="rank3" style="background-image:url('../../../../Downloads/[NEW] index, help_guide, result페이지/images/contents_share_1.png')">
+                  <div id="card_3_back"></div>
+                    <p id="card_3_des">공유킹</p>
+                      <img src="../public/images/icn_check.png" id="card_3_check">
+                      <img src="../public/images/detail_1.png" id="card_3_detail" data-toggle="modal" data-target="#modal3">
+                      <img src="../public/images/label_3.png" id="card_3_label">
+              </div>
+
+
+              <!-- count & analyze icon
+              ============================================= -->
+              <div class="analyzerclass">
+                  <img src="../public/images/btn_do_check_1.png" id="count_img">
+                  <span id="count_txt"> 0 </span>
+                  <a herf="# "><img src="../public/images/btn_do_over.png " id="analyze_img"></a>
+              </div>
+            </div><!--end innner_content-->
+
+              <!-- Modal (first card) -->
+              <div class="modal fade" id="modal1" role="dialog">
+                  <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                <h4 class="modal-title"> 상습지각자 색출 </h4>
+                            </div>
+                              <div class="modal-body"> modal은 아직 디자인 반영전이에요</div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                      </div>
+                  </div>
+              </div><!--end firstmodal-->
+
+              <!-- Modal (second card) -->
+              <div class="modal fade" id="modal2" role="dialog">
+                  <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                <h4 class="modal-title"> 맥커터 </h4>
+                            </div>
+                              <div class="modal-body"> 뚜르르르 맥ㄱ어디갔니ㅣ</div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                      </div>
+                  </div>
+              </div><!--end second modal-->
+
+              <!-- Modal (third card) -->
+              <div class="modal fade" id="modal3" role="dialog">
+                  <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                <h4 class="modal-title"> 공유킹 </h4>
+                            </div>
+                              <div class="modal-body">공유가39살이라는놀라운사실</div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                      </div>
+                  </div>
+              </div>  <!--end third modal-->
+          </div><!-- end content-->
+      </body>
+  </html>

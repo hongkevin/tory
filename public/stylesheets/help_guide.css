@@ -1,0 +1,73 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+      header{
+        background-repeat: no-repeat;
+        background-size:100%;
+        margin-bottom: 90px;
+        width:100%;
+      }
+      body{
+        	background-color:#F6F6F6;
+      }
+      .carousel-control.right, .carousel-control.left {
+         background-image:none;
+       }
+      .button{
+        width: 90%;
+        height: auto;
+      }
+      .carousel{
+        width:60%
+      }
+     .carousel-inner {
+       width:60%;
+       height:auto;
+       margin: auto;
+      }
+      .carousel-control { /*button's position : vertically center*/
+        position: absolute;
+        top: 35%;
+      }
+     .carousel-caption {
+      	position: relative;
+      	left: auto;
+      	right: auto;
+     }
+
+      p{ //caption
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size:2.3vmin;
+        font-weight:600;
+        color:#5D5D5D;
+        margin-top:33px;
+        margin-bottom: 0px;
+        letter-spacing:-1px;
+        text-align:center;
+      }
+
+      #caption1{
+        margin-top:5%;
+      }
+      #caption2,#caption3,#caption4,#caption5{
+        display:none;
+        margin-top:5%;
+      }
+      #page1{
+        margin-top:7%;
+        width:35%;
+      }
+      #page2, #page3, #page4, #page5{
+        display: none;
+        margin-top:7%;
+        width:35%;
+      }
+      #btn_close1,#btn_close2{
+        position: absolute;
+        top: 85%;
+        left:90%;
+        margin-top: 0px;
+        float:right;
+        width:10%;
+      }
+      #btn_close2{
+        display:none;
+      }
