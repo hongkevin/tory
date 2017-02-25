@@ -41,10 +41,10 @@
         <% if (result.indexOf("late") > -1 || result == "late"){ %>
         <input type="checkbox" name="option" id="late" value="late" style="display:none" checked>
         <% } %>
-        <input type="file" id="file" name="file">
+        <!--<input type="file" id="file" name="file">-->
 
         <!--<input type="file" id="fileselect" name="fileselect[]" style="display: none">-->
-        <input type="file" id="fileselect" name="fileselect[]" style="display: none">
+        <input type="file" id="fileselect" name="fileselect[]" >
 
         <img id="filedrag" src="/images/img_upload.png" ></img>
       </div>
@@ -119,7 +119,7 @@
 
       	// output file information
       	function ParseFile(file) {
-      
+
       		// Output(
       		// 	"<p>File information: <strong>" + file.name +
       		// 	"</strong> type: <strong>" + file.type +

@@ -485,11 +485,15 @@ function FindLateKing(jsonData, cb){
   cb(rank)
 }
 
-router.post('/send', upload.single('file'), function(req, res, next) {
+router.post('/send', upload.single('fileselect[]'), function(req, res, next) {
 
   var checkedOptions = req.body.option;
   console.log(checkedOptions);
 
+
+  // console.log(req.files);
+  console.log('-------------')
+  console.log(req.file);
   var filePath = './' + req.file.path;
 
   var checkedLength = checkedOptions.length;
@@ -625,12 +629,17 @@ router.post('/send', upload.single('file'), function(req, res, next) {
     var split_data = result.split("^^^^^");
 
     for (var i = 0; i < checkedLength; i++) {
-      var simple_data = split_data[i];
+
+      var simple_data = split_data[i+1];
+
       var sample = simple_data.split(",");
+
       var power_array = [];
+
       for (var k = 0; k < sample.length; k++) {
         power_array.push(sample[k]);
       }
+
       final_array.push({
         type: checkedOptions[i],
         name: name_list[checkedOptions[i]],
@@ -642,7 +651,7 @@ router.post('/send', upload.single('file'), function(req, res, next) {
       result : final_array
     };
     // res.render('help_guide', {title: 'Express'});
-
+    console.log(final_result.result);
     res.render('result', final_result);
   });
 
