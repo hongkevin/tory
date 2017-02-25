@@ -11,9 +11,7 @@
     <script  type="text/javascript" src="/javascripts/help_guide.js"> </script>
 
     <script>
-      $("#btn_close2").click(function() {
 
-      });
 
     </script>
 
@@ -74,11 +72,42 @@
                       <p id="caption5">5. 파일을 원 안에 끌어다 놓으세요</p>
                     </div>
 
+                    <form action="/help_send" method="post" id="help_send">
+                      <% if (result.indexOf("pig") > -1 || result == "pig"){ %>
+                        <input type="checkbox" name="option" id="pig" value="pig" style="display:none" checked>
+                      <% } %>
+                      <% if (result.indexOf("fuck") > -1 || result == "fuck"){ %>
+                        <input type="checkbox" name="option" id="fuck" value="fuck" style="display:none" checked>
+                      <% } %>
+                      <% if (result.indexOf("photo") > -1 || result == "photo"){ %>
+                        <input type="checkbox" name="option" id="photo" value="photo" style="display:none" checked>
+                      <% } %>
+                      <% if (result.indexOf("sorry") > -1 || result == "sorry"){ %>
+                        <input type="checkbox" name="option" id="sorry" value="sorry" style="display:none" checked>
+                      <% } %>
+                      <% if (result.indexOf("chat_end") > -1 || result == "chat_end"){ %>
+                        <input type="checkbox" name="option" id="chat_end" value="chat_end" style="display:none" checked>
+                      <% } %>
+                      <% if (result.indexOf("chat_start") > -1 || result == "chat_start") { %>
+                        <input type="checkbox" name="option" id="chat_start" value="chat_start" style="display:none" checked>
+                      <% } %>
+                      <% if (result.indexOf("disorder") > -1 || result == "disorder"){ %>
+                        <input type="checkbox" name="option" id="disorder" value="disorder" style="display:none" checked>
+                      <% } %>
+                      <% if (result.indexOf("share") > -1 || result == "share"){ %>
+                        <input type="checkbox" name="option" id="share" value="share" style="display:none" checked>
+                      <% } %>
+                      <% if (result.indexOf("late") > -1 || result == "late"){ %>
+                        <input type="checkbox" name="option" id="late" value="late" style="display:none" checked>
+                      <% } %>
+
+                      <!--<a href="#"><img src="/images/btn_do_over.png" id="analyze_img"></a>-->
+
                     <!-- Slide close button
                     ============================================= -->
-                    <a herf="#"><img src="/images/btn_help_close.png" id="btn_close1"></a>
-                    <a herf="#"><img src="/images/btn_help_close_2.png" id="btn_close2"></a>
-
+                      <img src="/images/btn_help_close.png" id="btn_close1" onclick="document.forms['help_send'].submit()">
+                      <img src="/images/btn_help_close_2.png" id="btn_close2" onclick="document.forms['help_send'].submit()">
+                    </form>
                     <!-- Slide Next,Prev button
                     ============================================= -->
                     <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev" style="height:15%;display:none;" id="prev_btn">
@@ -87,6 +116,8 @@
                     <a class="right carousel-control" href="#fullcarousel-example" data-slide="next" style="height:15%;" id="next_btn">
                       <img src="/images/btn_right_shd.png" class="button">
                     </a>
+
+
                     <!-- #end Slide Next,Prev button -->
                   </div>
                 </div>

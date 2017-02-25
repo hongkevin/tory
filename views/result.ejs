@@ -34,7 +34,7 @@
            <span class="menu" id=<%=result[i].type%>>
              <a href="javascript:void(0)" id="menu<%=i%>" data-target="#myCarousel" data-slide-to="<%=i%>" class="menutxt"><%=result[i].name%></a>
            </span>
-           <% } %>
+         <% } %>
       </div>
     </header><!--end header-->
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -138,10 +138,10 @@
                      <p>맨날 친구도 없이 앉아서 카톡만 하는 <span id="firstking" class="changetxt"><%=result[select].data[0]%></span>, 축하해요. 이 단톡방에서 제일 할일 없는 놈으로 뽑혔어요. 날씨 좋은 날 산책이라도 좀 하시던지, 맨날 방구석에 박혀서 휴대폰만 만지작 대는게 좋나요? <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨랑 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨도 마찬가지에요. 다들 심심하다고 단톡 사람들 괴롭히면 안돼요 알겠죠? 그럼 20000. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
 
                      <%} else if(result[select].type=='chat_end'){%>
-                     <p>단톡방 안에서 노잼을 담당한다고 볼 수 있는 맥커터들이 있죠. 그중 최고 노잼은 <span id="totalcount" class="changetxt"><%=result[select].data[0]%></span>. 단톡에서 필요한 정보만 쏙 빼먹으려 하거나 본인 취향의 개그를 강요하는건 아니겠죠? 이쯤이면 스스로 자각할 때도 되었는데... 결과를 보고 너무 충격 받지는 말아요. 언젠가 <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>씨의 말에 답을 해주는 천사가 나타날 수도 있으니까요. <span id="secondking" class="changetxt"><%=result[select].data[2]%></span>씨와 <span id="thirdking" class="changetxt"><%=result[select].data[4]%>씨도 무리한 드립은 삼가주세요. 언제 최고노잼에 등극할지 모르니까요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+                     <p>단톡방 안에서 노잼을 담당한다고 볼 수 있는 맥커터들이 있죠. 그중 최고 노잼은 <span id="totalcount" class="changetxt"><%=result[select].data[0]%></span>. 단톡에서 필요한 정보만 쏙 빼먹으려 하거나 본인 취향의 개그를 강요하는건 아니겠죠? 이쯤이면 스스로 자각할 때도 되었는데... 결과를 보고 너무 충격 받지는 말아요. 언젠가 <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>씨의 말에 답을 해주는 천사가 나타날 수도 있으니까요. <span id="secondking" class="changetxt"><%=result[select].data[2]%></span>씨와 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨도 무리한 드립은 삼가주세요. 언제 최고노잼에 등극할지 모르니까요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
 
                      <%} else if(result[select].type=='disorder'){%>
-                     <p>저기요, <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨. 이거 고를지 저거 고를지 하다가 허송세월 낭비 하지 말고, 또 그걸로 다른 톡방 사람들 힘들게 하지 마세요. 물론 다른 사람의 의견을 듣는건 좋지만 그것도 정도가 있는 법이에요. <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>번이씩이나 물어보면 듣는 사람 입장에서는 대충 아무거나 골라주게 된답니다. 2등을 한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨와 3등의 <span id="thirdking" class="changetxt"><%=result[select].data[4]%> 씨도 본인의 결정은 스스로 하는 습관을 들이도록 하세요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
+                     <p>저기요, <span id="firstking" class="changetxt"><%=result[select].data[0]%></span> 씨. 이거 고를지 저거 고를지 하다가 허송세월 낭비 하지 말고, 또 그걸로 다른 톡방 사람들 힘들게 하지 마세요. 물론 다른 사람의 의견을 듣는건 좋지만 그것도 정도가 있는 법이에요. <span id="totalcount" class="changetxt"><%=result[select].data[1]%></span>번이씩이나 물어보면 듣는 사람 입장에서는 대충 아무거나 골라주게 된답니다. 2등을 한 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 씨와 3등의 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 씨도 본인의 결정은 스스로 하는 습관을 들이도록 하세요. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
 
                      <%} else if(result[select].type=='share'){%>
                      <p>공유킹은 각종 유용한 정보들을 모아서 혼자 독차지하지 않고 많은 사람들과 공유하는 사람입니다. 이 사람들의 특징은 성품이 바르고 외모가 수려하며, 대인관계가 원만하고 대체로 인기가 많은 편입니다. 이 결과를 보신 분들은 공유킹에 등극하신 <span id="totalcount" class="changetxt"><%=result[select].data[0]%></span> 님께 감사함을 표하고 조공을 바치세요. 2등, 3등을 하신 <span id="secondking" class="changetxt"><%=result[select].data[2]%></span> 님과 <span id="thirdking" class="changetxt"><%=result[select].data[4]%></span> 님께도 감사함을 전해드리길 바랍니다. 세 분 아무쪼록 건강하시고 하시는 일마다 다 잘되시길 바라겠습니다. 결과물은 카카오톡이나 페이스북으로 공유해서 볼 수 있습니다.</p>
@@ -166,6 +166,7 @@
 
            </div>
       </div>
+    </div>
       <script>
       $("#menu0").attr("class","menutxt_select");
       <% for(var i=0; i<result.length; i++) {%>
@@ -222,7 +223,10 @@
            <% var data = result[select].data %>
            
            <% for(var i = 0; i < data.length / 2; i++) {%>
-              {  y: <%=data[i*2+1]%>, label:"<%=data[i*2]%>", indexLabelFontColor:"#930AAC"},
+              {
+                y:<%=data[i*2+1]%>,
+                label:"<%=data[i*2]%>",
+                indexLabelFontColor:"#930AAC"},
               <%}%>
               ]
               }]//data

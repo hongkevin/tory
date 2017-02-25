@@ -39,6 +39,26 @@ router.get('/send', function(req, res, next) {
   res.render('send', { title: '카카오톡 파일'});
 });
 
+router.post('/index_send', function(req, res, next) {
+  var checkedOptions = req.body.option;
+  console.log(checkedOptions);
+  var final_result = {
+    result : checkedOptions
+  };
+  res.render('help', final_result);
+});
+
+router.post('/help_send', function(req, res, next) {
+  var checkedOptions = req.body.option;
+  console.log(checkedOptions);
+  var final_result = {
+    result : checkedOptions
+  };
+  res.render('upload', final_result);
+});
+
+
+
 // 파일형태변경 & 유틸리티 함수들
 function ConvertCsvToJson(csvFilePath, callback, callback2) {
   var convertedData = {};
@@ -458,7 +478,7 @@ function FindSharingKing(jsonData, cb){
 }
 
 // 9. 지각왕
-function FindSharingKing(jsonData, cb){
+function FindLateKing(jsonData, cb){
   console.log('지각왕');
   var words = ['늦'];
   var rank = FindUserWithWords(jsonData, words);
@@ -467,9 +487,11 @@ function FindSharingKing(jsonData, cb){
 
 router.post('/send', upload.single('file'), function(req, res, next) {
 
-  var filePath = './' + req.file.path;
   var checkedOptions = req.body.option;
-  // console.log(checkedOptions);
+  console.log(checkedOptions);
+
+  var filePath = './' + req.file.path;
+
   var checkedLength = checkedOptions.length;
   // console.log(checkedLength);
   // ar counter = 0;

@@ -11,11 +11,41 @@
    <div id="overlay"></div>
     <img src="/images/top.png" alt="Smiley face" width='100%'>
 
-    <form id="upload" action="/result" method="POST" enctype="multipart/form-data" class="text-center">
+    <form id="upload" action="/send" method="post" enctype="multipart/form-data" class="text-center">
       <div class="container">
         <!-- <img src="img_upload.png" class="img_upload" width='310px'> -->
-        <input type=""
+        <% if (result.indexOf("pig") > -1 || result == "pig"){ %>
+        <input type="checkbox" name="option" id="pig" value="pig" style="display:none" checked>
+        <% } %>
+        <% if (result.indexOf("fuck") > -1 || result == "fuck"){ %>
+        <input type="checkbox" name="option" id="fuck" value="fuck" style="display:none" checked>
+        <% } %>
+        <% if (result.indexOf("photo") > -1 || result == "photo"){ %>
+        <input type="checkbox" name="option" id="photo" value="photo" style="display:none" checked>
+        <% } %>
+        <% if (result.indexOf("sorry") > -1 || result == "sorry"){ %>
+        <input type="checkbox" name="option" id="sorry" value="sorry" style="display:none" checked>
+        <% } %>
+        <% if (result.indexOf("chat_end") > -1 || result == "chat_end"){ %>
+        <input type="checkbox" name="option" id="chat_end" value="chat_end" style="display:none" checked>
+        <% } %>
+        <% if (result.indexOf("chat_start") > -1 || result == "chat_start") { %>
+        <input type="checkbox" name="option" id="chat_start" value="chat_start" style="display:none" checked>
+        <% } %>
+        <% if (result.indexOf("disorder") > -1 || result == "disorder"){ %>
+        <input type="checkbox" name="option" id="disorder" value="disorder" style="display:none" checked>
+        <% } %>
+        <% if (result.indexOf("share") > -1 || result == "share"){ %>
+        <input type="checkbox" name="option" id="share" value="share" style="display:none" checked>
+        <% } %>
+        <% if (result.indexOf("late") > -1 || result == "late"){ %>
+        <input type="checkbox" name="option" id="late" value="late" style="display:none" checked>
+        <% } %>
+        <input type="file" id="file" name="file">
+
+        <!--<input type="file" id="fileselect" name="fileselect[]" style="display: none">-->
         <input type="file" id="fileselect" name="fileselect[]" style="display: none">
+
         <img id="filedrag" src="/images/img_upload.png" ></img>
       </div>
       <div id="submitbutton" style="display: none">
@@ -80,7 +110,10 @@
 
               numberStep: percent_number_step
             },
-            10000
+            10000,
+            function() {
+              $("#upload").submit();
+            }
           );
       }
 
@@ -130,7 +163,7 @@
       
       })();
 
-        
+
     </script>
   
 

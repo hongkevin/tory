@@ -10,33 +10,76 @@
         <script type="text/javascript" src="/javascripts/index.js"></script>
 
         <script>
-          $(".rank1").click(function() {
-            $('input[id="pig"]').attr("checked", true);
-          });
-          $(".rank2").click(function() {
-            $('input[id="fuck"]').attr("checked", true);
-          });
-          $(".rank3").click(function() {
-            $('input[id="photo"]').attr("checked", true);
-          });
-          $(".rank4").click(function() {
-            $('input[id="sorry"]').attr("checked", true);
-          });
-          $(".rank5").click(function() {
-            $('input[id="chat_end"]').attr("checked", true);
-          });
-          $(".rank6").click(function() {
-            $('input[id="chat_start"]').attr("checked", true);
-          });
-          $(".rank7").click(function() {
-            $('input[id="disorder"]').attr("checked", true);
-          });
-          $(".rank8").click(function() {
-            $('input[id="share"]').attr("checked", true);
-          });
-          $(".rank9").click(function() {
-            $('input[id="late"]').attr("checked", true);
-          });
+          $(document).ready(function() {
+            $('.rank1').click(function() {
+              if ($('input:checkbox[id=late]').is(":checked")) {
+                $('input:checkbox[id=late]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=late]').attr("checked", true);
+              }
+            });
+            $(".rank2").click(function() {
+              if ($('input:checkbox[id=chat_end]').is(":checked")) {
+                $('input:checkbox[id=chat_end]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=chat_end]').attr("checked", true);
+              }            });
+            $(".rank3").click(function() {
+              if ($('input:checkbox[id=share]').is(":checked")) {
+                $('input:checkbox[id=share]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=share]').attr("checked", true);
+              }            });
+            $(".rank4").click(function() {
+              if ($('input:checkbox[id=disorder]').is(":checked")) {
+                $('input:checkbox[id=disorder]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=disorder]').attr("checked", true);
+              }            });
+            $(".rank5").click(function() {
+              if ($('input:checkbox[id=pig]').is(":checked")) {
+                $('input:checkbox[id=pig]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=pig]').attr("checked", true);
+              }            });
+            $(".rank6").click(function() {
+              if ($('input:checkbox[id=photo]').is(":checked")) {
+                $('input:checkbox[id=photo]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=photo]').attr("checked", true);
+              }            });
+            $(".rank7").click(function() {
+              if ($('input:checkbox[id=chat_start]').is(":checked")) {
+                $('input:checkbox[id=chat_start]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=chat_start]').attr("checked", true);
+              }
+            });
+            $(".rank8").click(function() {
+              if ($('input:checkbox[id=fuck]').is(":checked")) {
+                $('input:checkbox[id=fuck]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=fuck]').attr("checked", true);
+              }
+            });
+            $(".rank9").click(function() {
+              if ($('input:checkbox[id=sorry]').is(":checked")) {
+                $('input:checkbox[id=sorry]').attr("checked", false);
+              }
+              else {
+                $('input:checkbox[id=sorry]').attr("checked", true);
+              }
+            });
+          })
+
 
 
         </script>
@@ -88,6 +131,7 @@
 
               <!-- First card (rank1)
               ============================================= -->
+
               <div class="rank1" style="background-image:url('/images/contents_late.png')">
                   <div id="card_1_back"></div>
                       <p id="card_1_des">상습지각자</p>
@@ -179,8 +223,8 @@
                   <img src="/images/btn_do_check_1.png" id="count_img">
                   <span id="count_txt"> 0 </span>
                   <button type="submit" id="submit" style="display:none">Submit</button>
-                  <form action="/send" method="post">
-                    <input type="checkbox" name="option" id="pid" value="pig" style="display:none">
+                  <form action="/index_send" method="post" id="index_form">
+                    <input type="checkbox" name="option" id="pig" value="pig" style="display:none">
                     <input type="checkbox" name="option" id="fuck" value="fuck" style="display:none">
                     <input type="checkbox" name="option" id="photo" value="photo" style="display:none">
                     <input type="checkbox" name="option" id="sorry" value="sorry" style="display:none">
@@ -189,11 +233,12 @@
                     <input type="checkbox" name="option" id="disorder" value="disorder" style="display:none">
                     <input type="checkbox" name="option" id="share" value="share" style="display:none">
                     <input type="checkbox" name="option" id="late" value="late" style="display:none">
+                    <img src="/images/btn_do_over.png" id="analyze_img" onclick="document.forms['index_form'].submit()">
+
                     <!--<a href="#"><img src="/images/btn_do_over.png" id="analyze_img"></a>-->
-                    <button type="submit" id="submit" style="display:none">Submit</button>
                   </form>
 
-                  <a href="/help"><img src="/images/btn_do_over.png" id="analyze_img"></a>
+                  <!--<a href="/help"><img src="/images/btn_do_over.png" id="analyze_img"></a>-->
               </div>
             </div><!--end innner_content-->
 
